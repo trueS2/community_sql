@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  
+  main {
+    height: 100%;
+  }
+  
+  .amu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+  }
+  
+  
+  .amu-text {
+    padding: 1rem 0;
+    font-weight: lighter;
+  }
+  
+  .signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .signup-form {
+    width: 22em;
+    padding: 1rem 0.75rem; 
+    border-radius: 10px;
+    margin-top: 0rem;
+  }
+  
+  .image-wrapper  {
+    background-color: gray;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  
+  #profile-image {
+    display: none;
+  }
+  
+  .profile-text {
+    font-weight: bold;
+  }
+  
+  .profilehelper-signup {
+    color: red;
+    font-size: 0.8rem;
+    margin: 4px;
+  }
+  
+  .emailfont-signup {
+    font-weight: bold;
+  }
+  
+  #emailbox-signup {
+    width: 100%;
+    height: 1.3rem;
+    border-radius: 3px;
+    padding: 0.15rem;
+  }
+  
+  .emailhelper-signup1, .emailhelper-signup2, .emailhelper-signup3 {
+    color: red;
+    font-size: 0.8rem;
+    margin: 4px;
+  }
+  
+  .passwordfont-signup {
+    font-weight: bold;
+  }
+  
+  .passwordhelper-signup1, .passwordhelper-signup2 {
+    color: red;
+    font-size: 0.8rem;
+    margin: 4px;
+  }
+  
+  #passwordbox-signup {
+    width: 100%;
+    height: 1.3rem;
+    border-radius: 3px;
+    padding: 0.15rem; 
+  }
+  
+  .password2font-signup {
+    font-weight: bold;
+  }
+  
+  #password2box-signup {
+    width: 100%;
+    height: 1.3rem;
+    border-radius: 3px;
+    padding: 0.15rem; 
+  
+  }
+  
+  .password2helper-signup1, .password2helper_signup2 {
+    color: red;
+    font-size: 0.8rem;
+    margin: 4px;
+  }
+  
+  .namefont-signup {
+    font-weight: bold;
+  }
+  
+  #namebox-signup {
+    width: 100%;
+    height: 1.3rem;
+    border-radius: 3px;
+    padding: 0.15rem; 
+  }
+  
+  .namehelper-signup1, .namehelper-signup2, .namehelper-signup3 {
+    color: red;
+    font-size: 0.8rem;
+    margin: 4px;
+  }
+  
+  button.signup-btn {
+    width: 20rem;
+    background-color: #ACA0EB;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin: 0.5rem;
+    height: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .signup-btn.disabled{
+      cursor: not-allowed;
+  }
+  
+  .signup-btn.active{
+      background-color: #7F6AEE;
+      cursor: pointer;
+  }
+  
+  
+  .hidden {
+    display: none;
+  }
+  
+  button.back-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }

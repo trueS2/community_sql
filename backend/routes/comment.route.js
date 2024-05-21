@@ -1,0 +1,7 @@
+const commentController = require('../controllers/comment.controller');
+
+const express = require('express');
+
+const router = express.Router();
+
+module.exports = router;

@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nickname": "나는야돼지",
+        "profileimg": "./pig.png",
+        "uploaddate": "2024-04-28 20:45:05",
+        "comment":"꿀꿀"
+    },
+    {
+        "id": 2,
+        "nickname": "나는야강아지",
+        "profileimg": "./dog.png",
+        "uploaddate":"2024-04-28 21:45:05",
+        "comment": "멍멍"
+    },
+    {
+        "id": 3,
+        "nickname": "나는야곰",
+        "profileimg": "./bear.png",
+        "uploaddate": "2024-04-28 22:45:05",
+        "comment": "곰곰"
+    }
+]

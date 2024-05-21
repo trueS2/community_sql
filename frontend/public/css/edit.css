@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  main {
+    height: 100%;
+  }
+  
+  .amu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  }
+  
+  .amu-text {
+    padding: 1rem 0;
+    font-weight: lighter;
+  
+  }
+  
+  .edit-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .edit-form {
+    width: 22em;
+    padding: 1rem 0.75rem; 
+    border-radius: 10px;
+    margin-top: 2rem;
+  }
+  
+  .font-edit {
+    text-align: center;
+  }
+  
+  .profile-edit {
+    font-weight: bold;
+  }
+  
+  .email-edit {
+    font-weight: bold;
+  }
+  
+  .namefont-edit {
+    font-weight: bold;
+  }
+  
+  #name-edit {
+    width: 100%;
+    height: 1.5rem;
+    border-radius: 3px;
+    padding: 0.5rem;
+  }
+  
+  .helpertext-edit1, .helpertext-edit2, .helpertext-edit3 {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  button.editbutton1 {
+    width: 20rem;
+    background-color: #ACA0EB;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin: 0.5rem;
+    height: 1.5rem;
+    font-weight: bold;
+  }
+  
+  #toastContainer {
+    width: 5rem;
+    background-color: #ACA0EB;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    margin: 5rem;
+    height: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+  }
+  
+  #signoutBtn{
+    border: none;
+    background: none;
+    
+  }
+  
+  
+  
+  .profile-image-wrapper {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: gray;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  #profile-image {
+    display: none;
+    object-fit: cover;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+  
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+  
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+  
+    .dropdown-content a:hover {
+      background-color: #E9E9E9;
+    }
+  
+    .show {
+      display: block;
+    }
+  
+  /* 모달 전체 화면에 대한 스타일 */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    
+  }
+  
+  /* 모달 내용에 대한 스타일 */
+  .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    font-size: 0.8rem;
+    padding: 20px;
+    border-radius: 1rem;
+    width: 18%;
+    text-align: center;
+    border: 1px solid black;
+    
+  }
+  
+  #cancelBtn {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    margin: 0.5rem;
+    width: 3rem;
+  }
+  
+  #confirmBtn {
+    background-color: #7F6AEE;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    margin: 0.5rem;
+    width: 3rem;
+  }

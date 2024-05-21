@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="css/post2.css"> 
+  <title>JS Bin</title>
+</head>
+<body>
+  <header>
+     <div class="amu-container">
+      <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="20" height="20"><path d="M17.17,24a1,1,0,0,1-.71-.29L8.29,15.54a5,5,0,0,1,0-7.08L16.46.29a1,1,0,1,1,1.42,1.42L9.71,9.88a3,3,0,0,0,0,4.24l8.17,8.17a1,1,0,0,1,0,1.42A1,1,0,0,1,17.17,24Z"/></svg>
+      <h2 class='amu-text'>아무 말 대잔치</h2>
+      <img src = "img/otter.png" alt="otter"\ width="40px" height="40px" class="otter">
+     </div>  
+  </header>
+  <main>
+    <div class="post2-container1">
+      <div class="post2-font">게시글 수정</div>
+      <form action="" class=title-form>
+        <div class="post2-title">제목*</div>
+        <input type="text" id="post2title-input" placeholder="제목을 입력해주세요.(최대 26글자)">
+        <div class="post2-content">내용*</div>
+        <textarea id="content" placeholder="내용을 입력해주세요."></textarea>
+        <div class="post2-helpertext1 hide">*제목을 작성해주세요</div>
+        <div class="post2-helpertext2 hide">*내용을 작성해주세요.</div>
+        <div id="posteditimg" class="post2-image">이미지</div>
+          <div class="post2-container2">
+            <input type="file" id="postfileInput" name="image">
+          </div>
+      </form>
+      <button type='submit' id="post2btn" class='post2-complete disabled'>수정완료</button>
+    </div>
+  </main>
+  <footer></footer>
+  <script src="js/postedit.js"></script> 
+</body>
+</html>
