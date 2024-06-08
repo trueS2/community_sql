@@ -1,11 +1,11 @@
 // 모달 열기 버튼
-var openModalBtn = document.getElementById("postdelete");
+const openModalBtn = document.getElementById("postdelete");
 // 모달
-var modal = document.getElementById("myModal");
+const modal = document.getElementById("myModal");
 // 취소 버튼
-var cancelBtn = document.getElementById("cancelBtn");
+const cancelBtn = document.getElementById("cancelBtn");
 // 확인 버튼
-var confirmBtn = document.getElementById("confirmBtn");
+const confirmBtn = document.getElementById("confirmBtn");
 
 // 모달 열기 버튼 클릭 시 이벤트 처리
 openModalBtn.onclick = function() {
@@ -19,47 +19,53 @@ cancelBtn.onclick = function() {
 
 // 확인 버튼 클릭 시 이벤트 처리
 confirmBtn.onclick = function() {
-  // 여기에 회원 탈퇴 로직을 추가할 수 있습니다.
-  alert("게시글이 삭제되었습니다.");
+  fetch(`http://localhost:8080/posts/${urlPostId}`, {
+    method: 'DELETE'
+  })
+  .then(response => response.json())
+  .then(data => {
+    if(data.status === 200) {
+      alert("게시글이 삭제되었습니다.");
+      window.location.href = '/posts'; // 삭제 후 게시글 목록 페이지로 리다이렉트
+    } else {
+      alert("게시글 삭제에 실패했습니다.");
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert("게시글 삭제 중 문제가 발생했습니다.");
+  });
   modal.style.display = "none";
 }
 
 // 모달 영역 외를 클릭 시 모달이 닫히도록 처리
 window.onclick = function(event) {
-  if (event.target == modal) {
+  if (event.target === modal) {
     modal.style.display = "none";
   }
 }
 
-var openModalBtn2 = document.getElementById("commanddelete");
-// 모달
-var modal2 = document.getElementById("myModal2");
-// 취소 버튼
-var cancelBtn2 = document.getElementById("cancelBtn2");
-// 확인 버튼
-var confirmBtn2 = document.getElementById("confirmBtn2");
+const openModalBtn2 = document.getElementById("commanddelete");
+const modal2 = document.getElementById("myModal2");
+const cancelBtn2 = document.getElementById("cancelBtn2");
+const confirmBtn2 = document.getElementById("confirmBtn2");
 
-// 모달 열기 버튼 클릭 시 이벤트 처리
 openModalBtn2.onclick = function() {
-  modal.style.display = "block";
+  modal2.style.display = "block";
 }
 
-// 취소 버튼 클릭 시 이벤트 처리
 cancelBtn2.onclick = function() {
-  modal.style.display = "none";
+  modal2.style.display = "none";
 }
 
-// 확인 버튼 클릭 시 이벤트 처리
 confirmBtn2.onclick = function() {
-  // 여기에 회원 탈퇴 로직을 추가할 수 있습니다.
   alert("댓글이 삭제되었습니다.");
-  modal.style.display = "none";
+  modal2.style.display = "none";
 }
-
 
 // 게시글 로직 추가
 const urlPostId = Number(window.location.pathname.split("/")[2]);
-// console.log(urlPostId);
+
 (async () => {
   const response = await fetch(`http://localhost:8080/posts/${urlPostId}`, {
     headers: {
@@ -67,14 +73,13 @@ const urlPostId = Number(window.location.pathname.split("/")[2]);
       "Content-Type": "application/json"
     },
     credentials: "include",
-    method: "GET",
-    body: null
+    method: "GET"
   });
   const responseData = await response.json();
   const post = responseData.data;
 
-  document.querySelector('#post1title').textContent = post.postTitle;
-  document.querySelector('#post1writer').textContent = post.nickname;
-  document.querySelector('#post1date').textContent = post.uploaddate;
-  document.querySelector('#post1content').textContent = post.postContent;
+  document.getElementById('post1title').textContent = post.postTitle;
+  document.getElementById('post1writer').textContent = post.nickname;
+  document.getElementById('post1date').textContent = post.uploaddate;
+  document.getElementById('post1content').textContent = post.postContent;
 })();
