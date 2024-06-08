@@ -1,1 +1,22 @@
-[{"id":1,"postTitle":"도톨도톨","postContent":"도토리 존맛탱","uploaddate":"2024. 5. 21. 오후 9:19:42","nickname":null,"profileimg":null,"postimg":null},{"id":2,"postTitle":"멍멍","postContent":"개껌 존맛탱","uploaddate":"2024. 5. 21. 오후 10:32:51","nickname":null,"profileimg":null,"postimg":null},{"id":3,"postTitle":"끼잉끼잉","postContent":"물고기 존맛탱","uploaddate":"2024. 5. 22. 오전 12:07:31","nickname":null,"profileimg":null,"postimg":null}]
+[{"id":1,"postTitle":"도톨도톨",
+"postContent":"도토리 존맛탱",
+"uploaddate":"2024. 5. 21. 오후 9:19:42",
+"nickname":null,
+"profileimg":null,
+"postimg":null
+},
+
+{"id":2,
+"postTitle":"멍멍",
+"postContent":"개껌 존맛탱",
+"uploaddate":"2024. 5. 21. 오후 10:32:51",
+"nickname":null,
+"profileimg":null,
+"postimg":null},
+
+{"id":3,"postTitle":"끼잉끼잉",
+"postContent":"물고기 존맛탱",
+"uploaddate":"2024. 5. 22. 오전 12:07:31",
+"nickname":null,
+"profileimg":null,
+"postimg":null}]

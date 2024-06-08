@@ -1,0 +1,1 @@
+const comments = require('../database/comments.json');
