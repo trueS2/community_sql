@@ -26,7 +26,7 @@ confirmBtn.onclick = function() {
   .then(data => {
     if(data.status === 200) {
       alert("게시글이 삭제되었습니다.");
-      window.location.href = '/posts'; // 삭제 후 게시글 목록 페이지로 리다이렉트
+      window.location.href = '/post'; // 삭제 후 게시글 목록 페이지로 리다이렉트
     } else {
       alert("게시글 삭제에 실패했습니다.");
     }

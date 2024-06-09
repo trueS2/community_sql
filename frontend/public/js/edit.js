@@ -106,9 +106,6 @@ function toggleDropdown() {
     }
   }
   
-  
-  
-  
   fetch('edit.json')
     // 데이터를 JSON 형태로 변환
     .then(response => response.json())
