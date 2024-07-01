@@ -18,23 +18,23 @@ cancelBtn.onclick = function() {
 }
 
 // 확인 버튼 클릭 시 이벤트 처리
-confirmBtn.onclick = function() {
-  fetch(`http://localhost:8080/posts/${urlPostId}`, {
-    method: 'DELETE'
-  })
-  .then(response => response.json())
-  .then(data => {
+confirmBtn.onclick = async function() {
+  const urlPostId = Number(window.location.pathname.split("/")[2]);
+  try {
+    const response = await fetch(`http://localhost:8080/posts/${urlPostId}`, {
+      method: 'DELETE'
+    });
+    const data = await response.json();
     if(data.status === 200) {
       alert("게시글이 삭제되었습니다.");
       window.location.href = '/post'; // 삭제 후 게시글 목록 페이지로 리다이렉트
     } else {
       alert("게시글 삭제에 실패했습니다.");
     }
-  })
-  .catch(error => {
+  } catch (error) {
     console.error('Error:', error);
     alert("게시글 삭제 중 문제가 발생했습니다.");
-  });
+  }
   modal.style.display = "none";
 }
 
@@ -67,19 +67,24 @@ confirmBtn2.onclick = function() {
 const urlPostId = Number(window.location.pathname.split("/")[2]);
 
 (async () => {
-  const response = await fetch(`http://localhost:8080/posts/${urlPostId}`, {
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json"
-    },
-    credentials: "include",
-    method: "GET"
-  });
-  const responseData = await response.json();
-  const post = responseData.data;
+  try {
+    const response = await fetch(`http://localhost:8080/posts/${urlPostId}`, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      },
+      credentials: "include",
+      method: "GET"
+    });
+    const responseData = await response.json();
+    const post = responseData.data;
 
-  document.getElementById('post1title').textContent = post.postTitle;
-  document.getElementById('post1writer').textContent = post.nickname;
-  document.getElementById('post1date').textContent = post.uploaddate;
-  document.getElementById('post1content').textContent = post.postContent;
+    document.getElementById('post1title').textContent = post.postTitle;
+    document.getElementById('post1writer').textContent = post.nickname;
+    document.getElementById('post1date').textContent = post.uploaddate;
+    document.getElementById('post1content').textContent = post.postContent;
+  } catch (error) {
+    console.error('Error fetching post:', error);
+    alert("게시글을 불러오는 중 문제가 발생했습니다.");
+  }
 })();

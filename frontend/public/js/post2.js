@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var maxLength = 26; // 최대 글자 수
     var currentLength = this.value.length; // 현재 입력된 글자 수
       
-      // 현재 입력된 글자 수가 최대 글자 수를 초과하면 초과한 부분을 자름
+    // 현재 입력된 글자 수가 최대 글자 수를 초과하면 초과한 부분을 자름
     if (currentLength > maxLength) {
       this.value = this.value.slice(0, maxLength);
     }
   });
 });
-  
+
 var elPost2Helper1 = document.querySelector('.post2-helpertext1');
 var elPost2Helper1Input = document.querySelector('#post2title-input');
 var elPost2Helper2 = document.querySelector('.post2-helpertext2');
@@ -18,18 +18,18 @@ var elPost2Helper2Input = document.querySelector('#content');
 var post2Btn = document.getElementById('post2btn');
 
 function isValidTitle(value) {
-  return value.length > 0 && value.length <= 26
+  return value.length > 0 && value.length <= 26;
 }
 
 function isValidContent(value) {
-  return value.length > 0
+  return value.length > 0;
 }
 
 elPost2Helper1Input.onkeyup = function () {
   if (isValidTitle(elPost2Helper1Input.value)) {
-    elPost2Helper1.classList.add('hide')
+    elPost2Helper1.classList.add('hide');
   } else {
-    elPost2Helper1.classList.remove('hide')
+    elPost2Helper1.classList.remove('hide');
   }
 }
 
@@ -47,7 +47,7 @@ function handleInputChange() {
   var content = document.getElementById('content').value;
   var post2btn = document.getElementById('post2btn');
 
-  // 이메일과 비밀번호가 모두 유효할 때만 로그인 버튼을 활성화
+  // 제목과 내용이 모두 유효할 때만 게시글 추가 버튼을 활성화
   if (isValidTitle(title) && isValidContent(content)) {
     post2Btn.classList.remove('disabled');
     post2Btn.classList.add('active');
@@ -57,8 +57,7 @@ function handleInputChange() {
   }
 }
 
-
-// 입력 상자의 값 변경 이벤트를 감시하여 유효성 검사 및 로그인 버튼 상태 업데이트
+// 입력 상자의 값 변경 이벤트를 감시하여 유효성 검사 및 버튼 상태 업데이트
 document.getElementById('post2title-input').addEventListener('input', handleInputChange);
 document.getElementById('content').addEventListener('input', handleInputChange);
 
@@ -68,7 +67,6 @@ document.querySelector('#post2btn').addEventListener('click', async () => {
   const postContent = document.querySelector('#content').value;
   const now = new Date();
   const postDate = now.toLocaleString();
-  // const postImage = document.querySelector('')
 
   const response = await fetch('http://localhost:8080/posts/', {
     headers: {
@@ -95,4 +93,4 @@ document.querySelector('#post2btn').addEventListener('click', async () => {
     default:
       alert("게시글 작성 실패");
   }
-})
+});
