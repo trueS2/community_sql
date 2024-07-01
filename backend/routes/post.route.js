@@ -1,17 +1,17 @@
-const postController = require('../controllers/post.controller.js');
 const express = require('express');
+const postController = require('../controllers/post.controller');
 const router = express.Router();
 
-// 모든 게시글 렌더링
+// 모든 게시글 조회
 router.get('/', postController.render);
-
-// 새 게시글 생성
-router.post('/', postController.createPost);
 
 // 특정 게시글 조회
 router.get('/:id', postController.readPost);
 
-// 게시글 업데이트
+// 게시글 작성
+router.post('/', postController.createPost);
+
+// 게시글 수정
 router.patch('/:id', postController.updatePost);
 
 // 게시글 삭제

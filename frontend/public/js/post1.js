@@ -20,8 +20,13 @@ cancelBtn.onclick = function() {
 // 확인 버튼 클릭 시 이벤트 처리
 confirmBtn.onclick = async function() {
   const urlPostId = Number(window.location.pathname.split("/")[2]);
+  if (isNaN(urlPostId)) {
+    alert("잘못된 게시글 ID입니다.");
+    return;
+  }
+
   try {
-    const response = await fetch(`http://localhost:8080/posts/${urlPostId}`, {
+    const response = await fetch(`http://localhost:8080/api/posts/${urlPostId}`, {
       method: 'DELETE'
     });
     const data = await response.json();
@@ -65,12 +70,15 @@ confirmBtn2.onclick = function() {
 
 // 게시글 로직 추가
 const urlPostId = Number(window.location.pathname.split("/")[2]);
+if (isNaN(urlPostId)) {
+  alert("잘못된 게시글 ID입니다.");
+  throw new Error("Invalid post ID");
+}
 
 (async () => {
   try {
-    const response = await fetch(`http://localhost:8080/posts/${urlPostId}`, {
+    const response = await fetch(`http://localhost:8080/api/posts/${urlPostId}`, {
       headers: {
-        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json"
       },
       credentials: "include",
@@ -79,10 +87,10 @@ const urlPostId = Number(window.location.pathname.split("/")[2]);
     const responseData = await response.json();
     const post = responseData.data;
 
-    document.getElementById('post1title').textContent = post.postTitle;
+    document.getElementById('post1title').textContent = post.post_title; // 필드명 수정
     document.getElementById('post1writer').textContent = post.nickname;
-    document.getElementById('post1date').textContent = post.uploaddate;
-    document.getElementById('post1content').textContent = post.postContent;
+    document.getElementById('post1date').textContent = post.upload_dt; // 필드명 수정
+    document.getElementById('post1content').textContent = post.post_content; // 필드명 수정
   } catch (error) {
     console.error('Error fetching post:', error);
     alert("게시글을 불러오는 중 문제가 발생했습니다.");

@@ -13,6 +13,7 @@
     }
 
     const responseData = await response.json();
+    console.log('Response Data:', responseData); // 반환된 JSON 데이터 구조 확인
     const posts = responseData.data;
 
     const boardContainer = document.querySelector('.board-container');
@@ -27,9 +28,9 @@
     posts.forEach(post => {
       const postCard = document.createElement('a');
       postCard.className = 'posting-card';
-      postCard.href = `/post1/${post.id}`;
+      postCard.href = `/post1/${post.post_id}`;  // 수정: post.id -> post.post_id
       postCard.innerHTML = `
-        <div id='posttitle1'>${post.postTitle}</div>
+        <div id='posttitle1'>${post.post_title}</div>  <!-- 수정: post.postTitle -> post.post_title -->
         <div class="posting-wrapper">
           <div class="posting-info">
             <div class="like-post">좋아요 0</div>
@@ -37,11 +38,11 @@
             <div class="view-post">조회수 0</div>
           </div>
           <div class="posting-time">
-            <div id="postingdate1">${post.uploaddate}</div>
+            <div id="postingdate1">${post.upload_dt}</div>  <!-- 수정: post.uploaddate -> post.upload_dt -->
           </div>
         </div>
         <div class= "cw-container">
-          <img id = "postimage1" alt="이미지" width="20px" height="20px">
+          <img id="postimage1" alt="이미지" width="20px" height="20px">
           <div class="writer" id="postwriter1">${post.nickname}</div>
         </div>
       `;
