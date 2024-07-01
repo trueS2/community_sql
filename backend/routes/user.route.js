@@ -8,4 +8,13 @@ router.post('/login', userController.login);
 // 회원가입
 router.post('/signup', userController.signup);
 
+// 사용자 정보 조회
+router.get('/:id', userController.getUser);
+
+// 사용자 정보 수정
+router.put('/:id', userController.updateUser);
+
+// 사용자 삭제
+router.delete('/:id', userController.deleteUser);
+
 module.exports = router;
